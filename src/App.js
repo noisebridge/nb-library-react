@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+const bookInfo = require('../data/samplebooks.json');
 
 class App extends Component {
   render() {
