@@ -41,8 +41,9 @@ class BooksView extends Component {
       .html(function(d, e){
         console.log(d)
         let titleStr = '<h3>' + d.title + '</h3>';
-        let authorStr = '<h5>By: ' + d.authors + '</h5>'
-        return titleStr + authorStr;
+        let authorStr = '<h5>By: ' + d.authors + '</h5>';
+        let sampimg = '<div class="bookCoverDiv"><span class="helper"></span><img src="images/lincoln-inaug-bible.jpg" class="bookCoverImg"></img></div>'
+        return '<div class="bookTextDiv">'  + titleStr + authorStr + '</div>' + sampimg;
       })
 
   })

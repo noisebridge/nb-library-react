@@ -9,17 +9,16 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <img src="images/nblogoani.gif" className="App-logo" alt="logo" />
           <h2>Welcome to Noisebridge Library</h2>
         </div>
 
         <BooksView></BooksView>
-        
+
         <p className="App-intro">
-
-
-          To get started, edit <code>src/App.js</code> and save to reload.
-
+          To help make the digital interface to the Noisebridge Library see:
+          <a href="https://github.com/nb-library-wg/nb-library-react">
+          The github repo</a> for the front end of this project.
         </p>
       </div>
     );
