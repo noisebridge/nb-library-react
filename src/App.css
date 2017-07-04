@@ -5,13 +5,29 @@
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
+
 }
 
+.logodiv {
+  width: 5rem;
+}
+
+.welcomediv {
+  -webkit-flex: auto;
+  flex: 1 1 auto;
+  padding: 1rem;
+
+}
 .App-header {
   background-color: #000;
-  height: 150px;
+  height: 100px;
   padding: 20px;
   color: white;
+  display: -webkit-flex;
+  display: flex;
+  //flex: 1 1 auto;
+  flex-flow: row;
+
 }
 
 .App-intro {
@@ -50,8 +66,17 @@
   flex: 1 1 80%;
 }
 
-.helper {
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
+.singleBookDiv {
+  display:flex;
+  flex-flow:row;
+}
+
+.singleBookDesc {
+  flex: auto;
+  align-content: flex-start;
+  text-align: left;
+}
+
+.singleBookCoverDiv {
+  flex: 2 3 10%;
 }

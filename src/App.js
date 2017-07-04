@@ -1,26 +1,48 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import BooksView from './booksview.js';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+//  Redirect
+} from 'react-router-dom'
 
+import SingleBookView from "./singleBookView.js";
+
+//      <SingleBookView></SingleBookView>
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src="images/nblogoani.gif" className="App-logo" alt="logo" />
-          <h2>Welcome to Noisebridge Library</h2>
+      <Router>
+
+        <div className="App">
+          <div className="App-header">
+            <div className="logodiv">
+              <Link to="/">
+              <img src="/images/nblogoani.gif" className="App-logo" alt="logo" />
+              </Link>
+            </div>
+
+            <div className="welcomediv">
+              <h2>Welcome to Noisebridge Library</h2>
+            </div>
+
+          </div>
+          <Switch>
+            <Route path="/" exact component={BooksView}/>
+            <Route path="/book/:book" component={SingleBookView}/>
+          </Switch>
+          <p className="App-intro">
+            To help make the digital interface to the Noisebridge Library see:
+            <a href="https://github.com/nb-library-wg/nb-library-react">
+            The github repo</a> for the front end of this project.
+          </p>
         </div>
+    </Router>
 
-        <BooksView></BooksView>
-
-        <p className="App-intro">
-          To help make the digital interface to the Noisebridge Library see:
-          <a href="https://github.com/nb-library-wg/nb-library-react">
-          The github repo</a> for the front end of this project.
-        </p>
-      </div>
     );
   }
 }

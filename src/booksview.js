@@ -1,64 +1,95 @@
 import React, { Component } from 'react';
 import './App.css';
 
-//import logo from './logo.svg';
-let d3 = require('d3');
-
-
-
-
+import {
+  Link
+} from "react-router-dom";
 
 class BooksView extends Component {
   constructor(props) {
   super(props);
-  this.state = {secondsElapsed: 0};
-//  console.log(bookstuff)
+  this.state = {books: []};
 
   }
 
   componentDidMount() {
 //  this.interval = setInterval(() => this.tick(), 1000);
-  console.log('it did mount')
-  var booklib = d3.select('#booklib')
+    console.log('it did mount')
 
-// out books data request which we can change to actually
-  d3.json('data/samplebooks.json', function(err, data) {
-// if you want to see what comes Back
-//    console.log(err, data);
-    if(err) {
-      console.log("There was an error getting the samplebook data.");
-      throw err;
+    console.log("state in did mount", this.state)
+    var that= this;
+    let booksReq = new XMLHttpRequest();
+
+    booksReq.onload = function(e) {
+      var jsonDat = booksReq.response; // not responseText
+      /* ... */
+      console.log('got a response')
+      console.log(jsonDat)
+      let counter = 0;
+
+      let booksArray = jsonDat.map((d)=>{
+        d.key = counter;
+        counter++;
+        return d;
+      });
+
+      that.setState({books:booksArray})
+
     }
 
-    let booksArray = data;
+    booksReq.open("GET", 'data/samplebooks.json')
+    booksReq.responseType = "json"
 
-//
-    booklib.selectAll('.bookDiv')
-      .data(booksArray)
-      .enter()
-      .append('div')
-      .attr('class', 'bookDiv')
-      .html(function(d, e){
-        console.log(d)
-        let titleStr = '<h3>' + d.title + '</h3>';
-        let authorStr = '<h5>By: ' + d.authors + '</h5>';
-        let sampimg = '<div class="bookCoverDiv"><span class="helper"></span><img src="images/lincoln-inaug-bible.jpg" class="bookCoverImg"></img></div>'
-        return '<div class="bookTextDiv">'  + titleStr + authorStr + '</div>' + sampimg;
-      })
-
-  })
-
-
-  //  .text('book')
+    booksReq.send();
   }
 
   render() {
+    console.log(this.state)
+  //  let bookList =
     return (
       <div id="booklib">
+        {this.state.books.map((q)=>{
+            return (
+                <BookListItemView book={q} key={q.key}></BookListItemView>
+              )
+            })
+        }
       </div>
     );
   }
 }
 
+
+class BookListItemView extends Component {
+  render() {
+    var bookLink = "/book/" + this.props.book.title;
+    const imgAltStr = "Book cover";
+    let coverlink = this.props.book.openlibrary_medcover_url;
+
+    if(coverlink.length <= 0) {
+      coverlink = "images/lincoln-inaug-bible.jpg"
+    }
+    return (
+      <Link to={{
+          pathname:bookLink,
+          state: {book: this.props.book}
+        }}>
+        <div className="bookDiv">
+          <div className="bookTextDiv">
+          <h3>{this.props.book.title}</h3>
+          <h5>By: {this.props.book.authors} </h5>
+          </div>
+          <div className="bookCoverDiv">
+            <span className="helper">
+            </span>
+            <img src={coverlink} className="bookCoverImg"
+              alt={imgAltStr}>
+            </img>
+          </div>
+        </div>
+      </Link>
+    )
+  }
+}
 
 export default BooksView;
