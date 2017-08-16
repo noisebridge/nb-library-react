@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import BooksView from './booksview.js';
+import BookListView from './views/BookListView.js';
 import {
   BrowserRouter as Router,
   Route,
@@ -32,7 +32,7 @@ class App extends Component {
 
           </div>
           <Switch>
-            <Route path="/" exact component={BooksView}/>
+            <Route path="/" exact component={BookListView}/>
             <Route path="/book/:book" component={SingleBookView}/>
           </Switch>
           <p className="App-intro">
