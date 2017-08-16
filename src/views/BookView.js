@@ -1,9 +1,11 @@
+// Renders the view for a single book.
+
 import React, { Component } from 'react';
-import './App.css';
+import '../App.css';
 
 
-// singleBook should get a book object as one of it's props
-class SingleBookView extends Component {
+// BookView should get a book object as one of it's props
+class BookView extends Component {
   constructor(props) {
     super(props);
     console.log(this.props)
@@ -55,4 +57,4 @@ class SingleBookView extends Component {
 }
 
 
-export default SingleBookView;
+export default BookView;

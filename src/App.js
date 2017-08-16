@@ -9,9 +9,7 @@ import {
 //  Redirect
 } from 'react-router-dom'
 
-import SingleBookView from "./singleBookView.js";
-
-//      <SingleBookView></SingleBookView>
+import BookView from "./views/BookView.js";
 
 class App extends Component {
   render() {
@@ -33,7 +31,7 @@ class App extends Component {
           </div>
           <Switch>
             <Route path="/" exact component={BookListView}/>
-            <Route path="/book/:book" component={SingleBookView}/>
+            <Route path="/book/:book" component={BookView}/>
           </Switch>
           <p className="App-intro">
             To help make the digital interface to the Noisebridge Library see:
