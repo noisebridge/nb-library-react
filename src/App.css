@@ -39,36 +39,43 @@
   to { transform: rotate(360deg); }
 }
 
+#booklib {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 50px 80px;
+}
+
 .bookDiv {
   border: 1px solid black;
-  width: 80%;
-  margin: 0 auto;
-  display:inline-flex;
-  flex-flow: row;
+  height: 300px;
+  width: 250px;
+  margin-bottom: 40px;
+  display: inline-flex;
+  flex-direction: column;
+}
 
+.bookCover {
+  display: flex;
+  height: 200px;
+  justify-content: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  order: 1;
 }
 
 .bookCoverImg {
-  width: 40px;
-  height: 60px;
-  align-self: center; /* Put the item around the center */
-
+  height: 200px;
+  width: 150px;
 }
 
-.bookCoverDiv {
-//  position:absolute;
-  //float:right;
-  display: flex;
-  flex: 2 3 10%;
-}
-
-.bookTextDiv {
-  flex: 1 1 80%;
+.bookText {
+  order: 2;
 }
 
 .singleBookDiv {
-  display:flex;
-  flex-flow:row;
+  display: flex;
+  flex-flow: row;
 }
 
 .singleBookDesc {
