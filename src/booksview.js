@@ -16,7 +16,7 @@ class BooksView extends Component {
 //  this.interval = setInterval(() => this.tick(), 1000);
     console.log('it did mount')
 
-    console.log("state in did mount", this.state)
+  //  console.log("state in did mount", this.state)
     var that= this;
     let booksReq = new XMLHttpRequest();
 

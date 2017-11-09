@@ -4,30 +4,29 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
+  height: 50px;
+}
+
+.App-header {
+  background-color: #000;
   height: 80px;
+  padding: 15px;
+  color: white;
+  display: flex;
+  flex-flow: row
 
 }
 
-.logodiv {
-  width: 5rem;
+.App-header > div {
+  padding: 1rem;
 }
 
 .welcomediv {
-  -webkit-flex: auto;
-  flex: 1 1 auto;
-  padding: 1rem;
-
+  flex: 3 4 80%;
 }
-.App-header {
-  background-color: #000;
-  height: 100px;
-  padding: 20px;
-  color: white;
-  display: -webkit-flex;
-  display: flex;
-  //flex: 1 1 auto;
-  flex-flow: row;
 
+.logodiv {
+  flex: 1 1 10%;
 }
 
 .App-intro {
@@ -43,40 +42,25 @@
   border: 1px solid black;
   width: 80%;
   margin: 0 auto;
-  display:inline-flex;
-  flex-flow: row;
 
 }
 
 .bookCoverImg {
   width: 40px;
   height: 60px;
-  align-self: center; /* Put the item around the center */
-
 }
 
 .bookCoverDiv {
 //  position:absolute;
-  //float:right;
-  display: flex;
-  flex: 2 3 10%;
+  float:right;
 }
 
 .bookTextDiv {
-  flex: 1 1 80%;
+  width: 80%;
 }
 
-.singleBookDiv {
-  display:flex;
-  flex-flow:row;
-}
-
-.singleBookDesc {
-  flex: auto;
-  align-content: flex-start;
-  text-align: left;
-}
-
-.singleBookCoverDiv {
-  flex: 2 3 10%;
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
 }

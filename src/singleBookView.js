@@ -45,7 +45,7 @@ class SingleBookView extends Component {
           </div>
         </div>
         <div className="singleBookCoverDiv">
-          <img src={booksie.openlibrary_medcover_url}>
+          <img src={booksie.openlibrary_medcover_url} alt="Book cover">
           </img>
         </div>
       </div>
