@@ -1,27 +1,35 @@
+// Renders the view for a single book.
+
 import React, { Component } from 'react';
-import './App.css';
+import '../App.css';
 
 
-// singleBook should get a book object as one of it's props
-class SingleBookView extends Component {
+// BookView should get a book object as one of it's props
+class BookView extends Component {
   constructor(props) {
     super(props);
     console.log(this.props)
     // need to make sure this location shim shame actually exists
-    if(this.props.location.state) {
-      this.state = {book:this.props.location.state.book }
-    }
-    else {
-      this.state = {book:{name:'dunno', publish_date:'prehistory', subjects:'subjective',
-      title:'god it all broke',
-      openlibrary_medcover_url: "../images/lincoln-inaug-bible.jpg"
-}}
+    if (this.props.location.state) {
+      this.state = {
+        book: this.props.location.state.book
+      }
+    } else {
+      this.state = {
+        book: {
+          name: 'dunno',
+          publish_date: 'prehistory',
+          subjects: 'subjective',
+          title: 'god it all broke',
+          openlibrary_medcover_url: "../images/lincoln-inaug-bible.jpg"
+        }
+      }
     }
 
   }
   render(target) {
     console.log(this)
-    let booksie = this.state.book;
+    let book = this.state.book;
     return (
       <div className="singleBookDiv">
         <div className="singleBookDesc">
@@ -33,19 +41,19 @@ class SingleBookView extends Component {
           </div>
           <div>
             <span className="bookDescLabel">Published: </span>
-            {booksie.publish_date}
+            {book.publish_date}
           </div>
           <div>
             <span className="bookDescLabel">Subjects: </span>
-            {booksie.subjects}
+            {book.subjects}
           </div>
           <div>
             <span className="bookDescLabel">Page Count: </span>
-            {booksie.number_of_pages}
+            {book.number_of_pages}
           </div>
         </div>
         <div className="singleBookCoverDiv">
-          <img src={booksie.openlibrary_medcover_url} alt="Book cover">
+          <img src={book.openlibrary_medcover_url} alt="Book Image">
           </img>
         </div>
       </div>
@@ -55,4 +63,4 @@ class SingleBookView extends Component {
 }
 
 
-export default SingleBookView;
+export default BookView;
