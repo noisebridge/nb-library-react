@@ -8,7 +8,7 @@ import '../App.css';
 class BookView extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props)
+    //console.log(this.props)
     // need to make sure this location shim shame actually exists
     if (this.props.location.state) {
       this.state = {
@@ -28,7 +28,7 @@ class BookView extends Component {
 
   }
   render(target) {
-    console.log(this)
+  //  console.log(this)
     let book = this.state.book;
     return (
       <div className="singleBookDiv">
@@ -53,7 +53,7 @@ class BookView extends Component {
           </div>
         </div>
         <div className="singleBookCoverDiv">
-          <img src={book.openlibrary_medcover_url} alt="Book Image">
+          <img src={book.openlibrary_medcover_url} alt="Book cover">
           </img>
         </div>
       </div>

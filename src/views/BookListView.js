@@ -1,5 +1,5 @@
 // Grabs data from JSON (TODO: Move this json fetching logic to a model?)
-// 
+//
 
 import React, { Component } from 'react';
 import '../App.css';
@@ -10,18 +10,15 @@ class BookListView extends Component {
     super(props);
     this.state = { books: [] };
   }
-
+  // when component mounts request the books and set an array of them to the
+  // books key in state.
   componentDidMount() {
     //  this.interval = setInterval(() => this.tick(), 1000);
-    console.log('it did mount')
-
-    console.log("state in did mount", this.state)
     let booksReq = new XMLHttpRequest();
     booksReq.onload = (e) => {
       var jsonDat = booksReq.response; // not responseText
       /* ... */
-      console.log('got a response');
-      console.log(jsonDat);
+    //  console.log('got a response');
       let counter = 0;
       let booksArray = jsonDat.map((book) => {
         book.key = counter;
@@ -32,13 +29,14 @@ class BookListView extends Component {
     }
 
     // Mocking json data
+    // still need to figure out how the real backend works.
     booksReq.open("GET", 'data/samplebooks.json');
     booksReq.responseType = "json";
     booksReq.send();
   }
 
   render() {
-    console.log(this.state)
+  //  console.log(this.state)
   //  let bookList =
     return (
       <div id="booklib">
