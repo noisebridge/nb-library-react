@@ -1,21 +1,59 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-const bookInfo = require('../data/samplebooks.json');
+import BookListView from './views/BookListView.js';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+//  Redirect
+} from 'react-router-dom'
+
+import BookView from "./views/BookView.js";
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to Noisebridge Library</h2>
+      <Router>
+        <div className="App">
+          <div className="App-header">
+            <div className="logodiv">
+              <Link to="/">
+              <img src="/images/nblogoani.gif" className="App-logo" alt="logo" />
+              </Link>
+            </div>
+            <div className="welcomediv">
+              <h2>Welcome to Noisebridge Library</h2>
+            </div>
+            <div className="searchHeader">
+              <SearchBox />
+            </div>
+          </div>
+
+          <Switch>
+            <Route path="/" exact component={BookListView}/>
+            <Route path="/book/:book" component={BookView}/>
+          </Switch>
+
+          <p className="App-intro">
+            To help make the digital interface to the Noisebridge Library see:
+            <a href="https://github.com/nb-library-wg/nb-library-react">
+            The github repo</a> for the front end of this project.
+          </p>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      </Router>
     );
+  }
+}
+
+// Currently has no functionality except as a visual placeholder for when we
+// implement some searching.
+class SearchBox extends Component {
+  render() {
+    return (
+      <input id="searchHeader" type="search" results="5" name="searcher" placeholder="Search...">
+      </input>
+    )
   }
 }
 

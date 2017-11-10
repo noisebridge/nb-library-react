@@ -4,14 +4,29 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 50px;
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+  background-color: #000;
+  height: 80px;
+  padding: 15px;
   color: white;
+  display: flex;
+  flex-flow: row
+
+}
+
+.App-header > div {
+  padding: 1rem;
+}
+
+.welcomediv {
+  flex: 3 4 80%;
+}
+
+.logodiv {
+  flex: 1 1 10%;
 }
 
 .App-intro {
@@ -21,4 +36,36 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.bookDiv {
+  border: 1px solid black;
+  width: 80%;
+  margin: 0 auto;
+
+}
+
+.bookCoverImg {
+  width: 40px;
+  height: 60px;
+}
+
+.bookCoverDiv {
+//  position:absolute;
+  float:right;
+}
+
+.bookTextDiv {
+  width: 80%;
+}
+
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+
+#searchHeader {
+  margin: 1rem;
 }
