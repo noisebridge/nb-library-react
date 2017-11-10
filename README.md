@@ -1,6 +1,6 @@
 To get started running this locally just:
 
-    git clone https://github.com/nb-library-wg/nb-library-react.git
+    git clone https://github.com/noisebridge/nb-library-react.git
     git checkout dev
     npm install
     npm start
