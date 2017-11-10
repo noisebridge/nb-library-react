@@ -38,31 +38,43 @@
   to { transform: rotate(360deg); }
 }
 
+#booklib {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 50px 80px;
+}
+
 .bookDiv {
   border: 1px solid black;
-  width: 80%;
-  margin: 0 auto;
+  height: 300px;
+  width: 250px;
+  margin-bottom: 40px;
+  display: inline-flex;
+  flex-direction: column;
+}
 
+.bookCover {
+  display: flex;
+  height: 200px;
+  justify-content: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  order: 1;
 }
 
 .bookCoverImg {
-  width: 40px;
-  height: 60px;
+  height: 200px;
+  width: 150px;
 }
 
-.bookCoverDiv {
-//  position:absolute;
-  float:right;
+.bookText {
+  order: 2;
 }
 
-.bookTextDiv {
-  width: 80%;
-}
-
-.helper {
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
+.singleBookDiv {
+  display: flex;
+  flex-flow: row;
 }
 
 

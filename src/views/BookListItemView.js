@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 class BookListItemView extends Component {
   render() {
     var bookLink = "/book/" + this.props.book.title;
-    const imgAltStr = "Book cover";
+    const imgAltStr = `Cover for ${this.props.book.title}`;
     let coverlink = this.props.book.openlibrary_medcover_url;
 
     if(coverlink.length <= 0) {
@@ -14,20 +14,20 @@ class BookListItemView extends Component {
     }
     return (
       <Link to={{
-          pathname:bookLink,
+          pathname: bookLink,
           state: {book: this.props.book}
         }}>
         <div className="bookDiv">
-          <div className="bookTextDiv">
-          <h3>{this.props.book.title}</h3>
-          <h5>By: {this.props.book.authors} </h5>
+          <div className="bookText">
+            <p>{this.props.book.title}</p>
+            <p>By: {this.props.book.authors}</p>
           </div>
-          <div className="bookCoverDiv">
-            <span className="helper">
-            </span>
-            <img src={coverlink} className="bookCoverImg"
-              alt={imgAltStr}>
-            </img>
+          <div className="bookCover">
+            <img
+              className="bookCoverImg"
+              src={coverlink}
+              alt={imgAltStr}
+            />
           </div>
         </div>
       </Link>

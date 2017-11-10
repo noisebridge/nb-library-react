@@ -53,7 +53,7 @@ class BookView extends Component {
           </div>
         </div>
         <div className="singleBookCoverDiv">
-          <img src={book.openlibrary_medcover_url} alt="Book cover">
+          <img src={book.openlibrary_medcover_url} alt={`Cover for ${this.state.book.title}`}>
           </img>
         </div>
       </div>
