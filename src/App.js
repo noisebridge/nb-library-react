@@ -52,7 +52,7 @@ class App extends Component {
 class SearchBox extends Component {
   render() {
     return (
-      <input type="search" results="5" name="searcher" placeholder="Search...">
+      <input id="searchHeader" type="search" results="5" name="searcher" placeholder="Search...">
       </input>
     )
   }

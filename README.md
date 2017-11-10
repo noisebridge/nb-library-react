@@ -1,6 +1,7 @@
 To get started running this locally just:
 
-    git clone <thisrepo>
+    git clone https://github.com/nb-library-wg/nb-library-react.git
+    git checkout starter
     npm install
     npm start
 
