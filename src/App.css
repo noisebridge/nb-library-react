@@ -1,4 +1,7 @@
 .App {
+  font-size: 16px;
+  padding-bottom: 70px;
+  position: relative;
   text-align: center;
 }
 
@@ -80,4 +83,13 @@
 
 #searchHeader {
   margin: 1rem;
+}
+
+footer {
+  bottom: 0;
+  height: 70px;
+  margin: 0 auto;
+  position: absolute;
+  text-align: center;
+  width: 100%;
 }

@@ -35,11 +35,11 @@ class App extends Component {
             <Route path="/book/:book" component={BookView}/>
           </Switch>
 
-          <p className="App-intro">
-            To help make the digital interface to the Noisebridge Library see:
-            <a href="https://github.com/nb-library-wg/nb-library-react">
-            The github repo</a> for the front end of this project.
-          </p>
+          <footer>
+            <p className="App-intro">
+              To help make the digital interface to the Noisebridge Library, see <a href="https://github.com/nb-library-wg/nb-library-react">the Github repo</a> for the front-end of this project.
+            </p>
+          </footer>
         </div>
       </Router>
     );
