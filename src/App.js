@@ -17,25 +17,27 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <div className="App-header">
+          <header>
             <div className="logodiv">
               <Link to="/">
               <img src="/images/nblogoani.gif" className="App-logo" alt="logo" />
               </Link>
             </div>
             <div className="welcomediv">
-              <h2>Welcome to Noisebridge Library</h2>
+              <h1>Welcome to Noisebridge Library</h1>
             </div>
             <div className="searchHeader">
               <SearchBox />
             </div>
-          </div>
+          </header>
 
-          <Switch>
-            <Route path="/" exact component={BookListView}/>
-            <Route path="/book/:book" component={BookView}/>
-            <Route path="/new" component={AddBookForm}/>
-          </Switch>
+          <main>
+            <Switch>
+              <Route path="/" exact component={BookListView}/>
+              <Route path="/book/:book" component={BookView}/>
+              <Route path="/new" component={AddBookForm}/>
+            </Switch>
+          </main>
 
           <footer>
             <p className="App-intro">

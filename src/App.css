@@ -1,6 +1,8 @@
 .App {
+  box-sizing: border-box;
   font-size: 16px;
-  padding-bottom: 70px;
+  min-height: 100%;
+  padding-bottom: 50px;
   position: relative;
   text-align: center;
 }
@@ -10,18 +12,26 @@
   height: 50px;
 }
 
-.App-header {
+header {
   background-color: #000;
   height: 80px;
   padding: 15px;
   color: white;
   display: flex;
-  flex-flow: row
-
+  flex-flow: row;
 }
 
-.App-header > div {
+header > div {
   padding: 1rem;
+}
+
+footer {
+  bottom: 0;
+  height: 50px;
+  margin: 0 auto;
+  position: absolute;
+  text-align: center;
+  width: 100%;
 }
 
 .welcomediv {
@@ -30,10 +40,6 @@
 
 .logodiv {
   flex: 1 1 10%;
-}
-
-.App-intro {
-  font-size: large;
 }
 
 @keyframes App-logo-spin {
@@ -84,16 +90,8 @@
   margin: 1rem;
 }
 
-footer {
-  bottom: 0;
-  height: 70px;
-  margin: 0 auto;
-  position: absolute;
-  text-align: center;
-  width: 100%;
-}
-
 .addBookForm {
+  height: 450px;
   margin: 0 auto;
   width: 70%;
 }
