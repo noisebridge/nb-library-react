@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import BookListView from './views/BookListView.js';
+import BookView from "./views/BookView.js";
+import AddBookForm from './views/AddBookForm';
 import {
   BrowserRouter as Router,
   Route,
@@ -9,7 +11,6 @@ import {
 //  Redirect
 } from 'react-router-dom'
 
-import BookView from "./views/BookView.js";
 
 class App extends Component {
   render() {
@@ -33,6 +34,7 @@ class App extends Component {
           <Switch>
             <Route path="/" exact component={BookListView}/>
             <Route path="/book/:book" component={BookView}/>
+            <Route path="/new" component={AddBookForm}/>
           </Switch>
 
           <footer>

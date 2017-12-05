@@ -80,7 +80,6 @@
   flex-flow: row;
 }
 
-
 #searchHeader {
   margin: 1rem;
 }
@@ -92,4 +91,26 @@ footer {
   position: absolute;
   text-align: center;
   width: 100%;
+}
+
+.addBookForm {
+  margin: 0 auto;
+  width: 70%;
+}
+
+.inputFieldGroup {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.inputFieldGroup label {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.inputFieldGroup input {
+  font-size: 1rem;
+  width: 300px;
 }
